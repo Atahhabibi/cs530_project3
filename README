@@ -1,0 +1,36 @@
+Name: Atah Habibi
+RedID: 130699943
+
+# CS530 Project 3 - Statement Parser
+
+## Grammar (BNF)
+<program> ::= <statement>*
+<statement> ::= id = <expression> ;
+              | <expression>
+<expression> ::= id
+               | id op <expression>
+               | ( <expression> ) op <expression>
+
+- id: begins with a letter, followed by letters/digits
+- op: +, -, *, /, %
+
+## File List
+- scanner.l
+- parser.y
+- Makefile
+- scanme.txt
+- README
+
+## Build Instructions
+To compile and run:
+```bash
+make
+./scanner < scanme.txt
+```
+
+## Issues
+Parentheses parsing is basic and may not support nested parens.
+
+## Lessons Learned
+- Practiced Flex/Bison integration
+- Improved grammar debugging skills
